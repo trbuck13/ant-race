@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import Button from '@/components/Button';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="green-gradiant flex min-h-screen items-center">
       <div className="mx-auto max-w-4xl py-16 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
@@ -11,9 +13,7 @@ export default function Home() {
         <h2 className="mb-8 text-6xl font-extrabold text-yellow-300">
           <span className="block ">National Championships</span>
         </h2>
-        <Button>
-          <Link href="/leaderboard"> View Leaderboard</Link>
-        </Button>
+        <Button onClick={() => router.push('/leaderboard')}>View Leaderboard</Button>
       </div>
     </div>
   );
